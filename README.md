@@ -1,2 +1,2 @@
-# task-list-
+# task-list
 A simple check list.
