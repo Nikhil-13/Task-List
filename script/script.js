@@ -63,6 +63,7 @@ function addTask(e) {
 		const elem = `${task.value}<a href="#" class="del-btn"><i class="fa-solid fa-trash text-danger"></i></a> `
 		li.innerHTML = elem
 		ul.appendChild(li)
+		li.firstChild.addEventListener('click', removeTask)
 		storeTaskInLocalStorage(task.value)
 		task.value = ''
 	}
@@ -83,7 +84,7 @@ function storeTaskInLocalStorage(task) {
 
 function filterTasks(e) {
 	const text = e.target.value.toLowerCase()
-	console.log(text)
+	// console.log(text)
 
 	document.querySelectorAll('.list-item').forEach(function (task) {
 		const item = task.firstChild.textContent
